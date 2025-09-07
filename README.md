@@ -30,30 +30,20 @@ The tool comes with several built-in filter modules:
 ### Building
 
 ```bash
-# Clone the repository
 git clone https://github.com/0xaalyousef/wfilter.git
 cd wfilter
 
-# Build everything (main executable and modules)
 make all
 
-# Build only modules
 make modules
 
-# Run tests
-make test
-
-# Clean build artifacts
 make clean
-
-# Install system-wide (optional)
-sudo make install
 ```
 
 ## Usage
 
 ```bash
-./wfilter [OPTIONS] <wordlist_file>
+wfilter [OPTIONS] <wordlist_file>
 ```
 
 ### Options
@@ -70,22 +60,19 @@ sudo make install
 
 ```bash
 # Show help
-./wfilter -h
+wfilter -h
 
 # Filter words with minimum length 8 (default)
-./wfilter rockyou.txt
+wfilter rockyou.txt
 
 # Filter words with minimum length 10, uppercase, and special characters
-./wfilter -l 10 -u -s rockyou.txt
+wfilter -l 10 -u -s rockyou.txt
 
 # Filter words with minimum length 8 and digits, save to file
-./wfilter -l 8 -d -o filtered.txt passwords.txt
+wfilter -l 8 -d -o filtered.txt passwords.txt
 
 # Verbose output showing all details
-./wfilter -l 6 -u -s -d -v wordlist.txt
-
-# Combine multiple filters
-./wfilter -l 12 -u -s -d -o strong_passwords.txt wordlist.txt
+wfilter -l 6 -u -s -d -v wordlist.txt
 ```
 
 ## Creating Custom Modules
